@@ -1,6 +1,8 @@
 CREATE USER shopadmin WITH PASSWORD 'velvet_admin';
 CREATE DATABASE shop;
 GRANT ALL PRIVILEGES ON DATABASE "shop" TO shopadmin;
+GRANT ALL PRIVILEGES ON * TO 'remoteadmin'@'%' IDENTIFIED BY 'remote_admin' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 
   use shop;
 
