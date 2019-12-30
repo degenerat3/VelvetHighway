@@ -1,3 +1,4 @@
+<?php include "templates/header.php"; ?>
 <ul>
   <li>
     <a href="inventory.php"><strong>Inventory</strong></a> - goto inventory page
@@ -9,3 +10,4 @@
     <a href="shell.php"><strong>WebShell</strong></a> - goto webshell
   </li>
 </ul>
+<?php include "templates/footer.php"; ?>

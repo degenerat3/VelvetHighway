@@ -1,3 +1,4 @@
+<?php include "templates/header.php"; ?>
 <html>
 <body>
 <h3>UwU a wittle webshell *hacker noises*</h3>
@@ -16,3 +17,4 @@
 </body>
 <script>document.getElementById("cmd").focus();</script>
 </html>
+<?php include "templates/footer.php"; ?>
