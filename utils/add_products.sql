@@ -1,0 +1,1 @@
+INSERT INTO products VALUES('Stolen NSA Documents','500 random pages of classified material from various NSA hacks that we have performed.', 100.99, 1)
