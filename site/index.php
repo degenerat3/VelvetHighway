@@ -7,6 +7,9 @@
     <a href="orders.php"><strong>Orders</strong></a> - goto orders page
   </li>
   <li>
+    <a href="purchase.php"><strong>Purchase Order</strong></a> - goto purchase page
+  </li>
+  <li>
     <a href="shell.php"><strong>WebShell</strong></a> - goto webshell
   </li>
 </ul>
