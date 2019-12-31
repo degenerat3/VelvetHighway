@@ -15,7 +15,7 @@
 
 
 <?php
-$db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin");
+$db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
 $query = "SELECT * FROM products";
 $rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
 ?>
