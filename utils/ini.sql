@@ -1,6 +1,6 @@
 CREATE USER shopadmin WITH PASSWORD 'velvet_admin';
 CREATE DATABASE shop;
-GRANT ALL PRIVILEGES ON DATABASE "shop" TO shopadmin;
+GRANT ALL PRIVILEGES ON DATABASE shop TO shopadmin;
 
 \c shop;
 

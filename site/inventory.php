@@ -16,11 +16,11 @@
 
 <?php
 $db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin");
-$result = pg_query($db_conn, "SELECT * FROM products");
-$res_arr = pg_fetch_all($result);
+$query = "SELECT * FROM products";
+$rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
 ?>
 
-<?php foreach ($res_arr as $row) { ?>
+<?php while ($row = pg_fetch_row($rs)) { ?>
       <tr>
 <td><?php echo escape($row["id"]); ?></td>
 <td><?php echo escape($row["name"]); ?></td>
