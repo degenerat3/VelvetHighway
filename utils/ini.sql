@@ -14,6 +14,8 @@ CREATE DATABASE shop;
     shipped BOOLEAN not null default false
   );
 
+ALTER SEQUENCE orders_id_seq RESTART WITH 500000;
+
   CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR (30) NOT NULL,
