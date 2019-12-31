@@ -19,13 +19,15 @@ echo "<p> " . $row['description'] . "</p>";
 echo "<br>";
 if ($row["instock"] == "t"){
     echo '<font size="5" color="green">In Stock!</font><br>';
-    echo '<img src="images/buy-now.png" alt="" border=1 height=50 width=250></img>';
+    $purchlink = "purchase.php?prid='" . $row["id"] . "'";
+    echo '<a href="' . $purchlink . '"><img src="images/buy-now.png" alt="" border=1 height=50 width=250></img></a>'
   }else { echo '<font size="5" color="red">Out of Stock!</font><br>';
     echo '<img src="images/buy-now-gr.png" alt="" border=1 height=50 width=250</img>';
   }
 
 echo "<br>";
 echo '<a href="inventory.php">Back to inventory</a>';
+
 
 ?>
 

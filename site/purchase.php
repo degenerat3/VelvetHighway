@@ -11,7 +11,10 @@
     	<input type="text" name="email" id="email">
         <br><br>
         <label for="prodid">Product ID</label>
-    	<input type="text" name="prodid" id="prodid">
+        <?php 
+        $prid = $_GET['prid'];
+        echo '<input type="text" name="prodid" id="prodid" value=' . $prid . '>';
+        ?>
         <br><br>
     	<label for="ccnum">Credit Card Number</label>
     	<input type="text" name="ccnum" id="ccnum">
