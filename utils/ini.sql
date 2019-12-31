@@ -5,7 +5,7 @@ GRANT ALL PRIVILEGES ON DATABASE "shop" TO shopadmin;
 \c shop;
 
   CREATE TABLE orders (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     firstname VARCHAR (30) NOT NULL,
     lastname VARCHAR (30) NOT NULL,
     email VARCHAR (50) NOT NULL,
@@ -16,7 +16,7 @@ GRANT ALL PRIVILEGES ON DATABASE "shop" TO shopadmin;
   );
 
   CREATE TABLE products (
-    id INT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR (30) NOT NULL,
     description VARCHAR (250) NOT NULL,
     price NUMERIC (10,2),
