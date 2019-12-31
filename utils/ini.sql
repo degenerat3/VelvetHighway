@@ -1,9 +1,5 @@
 CREATE USER shopadmin WITH PASSWORD 'velvet_admin';
 CREATE DATABASE shop;
-GRANT ALL PRIVILEGES ON DATABASE shop TO shopadmin;
-GRANT USAGE ON SCHEMA public TO shopadmin;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO shopadmin;
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO shopadmin;
 
 \c shop;
 
@@ -25,3 +21,8 @@ GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO shopadmin;
     price NUMERIC (10,2),
     instock BOOLEAN not null default true
   );
+
+GRANT ALL PRIVILEGES ON DATABASE shop TO shopadmin;
+GRANT USAGE ON SCHEMA public TO shopadmin;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO shopadmin;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO shopadmin;
