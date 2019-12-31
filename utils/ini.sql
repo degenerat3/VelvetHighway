@@ -2,7 +2,7 @@ CREATE USER shopadmin WITH PASSWORD 'velvet_admin';
 CREATE DATABASE shop;
 GRANT ALL PRIVILEGES ON DATABASE "shop" TO shopadmin;
 
-  use shop;
+\c shop;
 
   CREATE TABLE orders (
     id INT PRIMARY KEY,
