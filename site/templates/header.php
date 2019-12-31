@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body style="background-color:gray;">
+  <body style="background-color:#b2b2b2;">
   <a href="index.php">
   <img src="images/vh-logo-full.png" alt="Velvet Highway Homepage" style="width:436px;height:100px;border:0;">
 </a> 

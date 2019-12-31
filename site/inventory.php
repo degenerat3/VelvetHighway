@@ -20,7 +20,9 @@
     echo "<td> In Stock </td>";
   }else { echo "<td> Out of Stock </td>";
   }
-    echo "<td> more </td>";
+    $namelink = "?name='" . $row["name"] . "'";
+    str_replace(" ", "+", $namelink);
+    echo '<td> <a href="product.php' . $namelink . '">More Info</a> </td>';
     echo "</tr>";
   }
   echo "</tbody> </table>";
