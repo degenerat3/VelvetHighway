@@ -1,9 +1,9 @@
 #!/bin/bash
 ## Get packages
 echo "[+] Updating packages..."
-sudo apt update > /dev/null
+sudo apt-get update > /dev/null
 echo "[+] Installing packages..."
-sudo DEBIAN_FRONTEND=noninteractive apt -y install postgresql postgresql-contrib php7.2 libapache2-mod-php php7.2-pgsql apache2 > /dev/null
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install postgresql postgresql-contrib php7.2 libapache2-mod-php php7.2-pgsql apache2 > /dev/null
 sudo systemctl restart apache2 > /dev/null
 
 ## Setup DB
