@@ -21,3 +21,4 @@ sudo -u postgres psql -a -f add_products.sql > /dev/null # insert items into pro
 echo "[+] Setting up web pages..."
 cp -r ../site/* /var/www/html > /dev/null
 rm /var/www/html/index.html > /dev/null
+echo "[+] Site successfull set up, visit at http://localhost"
