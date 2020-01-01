@@ -4,7 +4,7 @@ CREATE DATABASE shop;
 \c shop;
 
   CREATE TABLE orders (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     firstname VARCHAR (30) NOT NULL,
     lastname VARCHAR (30) NOT NULL,
     email VARCHAR (50) NOT NULL,
@@ -14,7 +14,7 @@ CREATE DATABASE shop;
     shipped BOOLEAN not null default false
   );
 
-ALTER SEQUENCE orders_id_seq RESTART WITH 292370636301000;
+ALTER SEQUENCE orders_id_seq RESTART WITH 2923706363000;
 
   CREATE TABLE products (
     id SERIAL PRIMARY KEY,
