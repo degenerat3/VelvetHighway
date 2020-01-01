@@ -16,7 +16,7 @@ RESULT=$?
 if [ $RESULT -eq 0 ]; then
   echo "[+] Success"
 else
-  echo "[*]Error! Exiting..."
+  echo "[*] Error! Exiting..."
   exit 1
 fi
 sudo systemctl restart apache2 > /dev/null
