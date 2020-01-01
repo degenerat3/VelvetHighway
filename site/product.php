@@ -1,4 +1,5 @@
 <?php include "templates/header.php"; ?>
+<center>
 <h2>Product Information </h2>
 <a href="inventory.php">Back to inventory</a>
 <br>
@@ -30,5 +31,5 @@ echo '<a href="inventory.php">Back to inventory</a>';
 
 
 ?>
-
+</center>
 <?php include "templates/footer.php"; ?>

@@ -1,4 +1,5 @@
   <?php include "templates/header.php"; ?>
+  <center>
       <h3>Item Inventory</h3>
 
 
@@ -28,5 +29,5 @@
   echo "</tbody> </table>";
   ?>
 
-
+</center>
   <?php include "templates/footer.php"; ?>

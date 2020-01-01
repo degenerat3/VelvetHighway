@@ -1,4 +1,5 @@
 <?php include "templates/header.php"; ?>
+<center>
 <body>
     <h3>Orders</h3>
 
@@ -39,4 +40,5 @@
   }
 ?>
   </body>
+</center>
 <?php include "templates/footer.php"; ?>

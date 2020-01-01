@@ -1,5 +1,5 @@
 <?php include "templates/header.php"; ?>
-
+<center>
 <?php
 if (isset($_POST['submit'])) {
       $db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
@@ -43,5 +43,5 @@ if (isset($_POST['submit'])) {
     </form>
 
     <a href="index.php">Back to home</a>
-
+</center>
     <?php include "templates/footer.php"; ?>
