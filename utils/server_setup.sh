@@ -1,3 +1,4 @@
+#!/bin/bash
 ## Get packages
 sudo apt update
 sudo DEBIAN_FRONTEND=noninteractive apt -y install postgresql postgresql-contrib php7.2 libapache2-mod-php php7.2-pgsql apache2
