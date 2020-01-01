@@ -1,7 +1,13 @@
 \c shop;
-INSERT INTO products VALUES(DEFAULT, 'Stolen NSA Documents','500 random pages of classified material from various NSA hacks that we have performed.', 99.99, true);
+INSERT INTO products VALUES(DEFAULT, 'Stolen CIA-NSA Documents','500 random pages of classified material from various intel hacks that we have performed. Fun excerpts include information on Seal Team 6 missions, foreign governement takeovers, illuminati meetings, classified math formulas, and many many more!', 99.99, true);
 INSERT INTO products VALUES(DEFAULT, 'Skimmed Credit Cards','10 Credit Card numbers with associated CVV/CVCs and billing addresses', 4.99, true);
-INSERT INTO products VALUES(DEFAULT, 'Windows Me 0-day','Unpatched RCE in Windows Me', 0.99, false);
+INSERT INTO products VALUES(DEFAULT, 'Windows Me 0-day','Unpatched RCE in Windows Me, use it to pwn all sorts of hospitals, gov agencies, and private businesses that are still running this superior operating system.', 0.99, false);
 INSERT INTO products VALUES(DEFAULT, 'ATM Malware','A malicious software suite that, when launched against ATMs can skim card information, distribute cash, and otherwise control the sysytem', 64.99, true);
 INSERT INTO products VALUES(DEFAULT, 'Botnet Control','Temporarily take control of our efficient and feature-rich botnet, price is per hour of control', 49.99, true);
+INSERT INTO products VALUES(DEFAULT, 'Banned Energy Drinks','A 24pk of energy drinks deemed too dangerous for the general public, expire Jan 2031', 24.49, true);
+INSERT INTO products VALUES(DEFAULT, 'Portable Hacking Kit','A customized Android tablet loaded with HaxorOS, with a removeable antenna. For all your on-the-go hacking needs! Pwn noobs everywhere from the bar to the airport, and it looks like youre simply playing Candy Crush!', 119.99, true);
+INSERT INTO products VALUES(DEFAULT, 'AES Universal Key','A master key that will help break any AES implementation, because why wouldnt it be a bad idea to backdoor all crypto?', 99999.99, false);
+INSERT INTO products VALUES(DEFAULT, 'Nuclear Reactor Backdoor','Access to a shell on your choice of nuclear reactor. Choose between hundreds of your favorite reactor sites accross NA, EU, and AS, feel free to heat reactor cores as you see fit and cause total meltdown!', 399.99, true);
+INSERT INTO products VALUES(DEFAULT, 'Hacker Training','Be paired with one of our trained and certified hackers. Learn the ins and outs of exploit development, botnet creation and management, open source tool copying, script kiddie-ing, and other advanced methods utilized by APTs. Price is per hour of training.', 34.49, true);
+INSERT INTO products VALUES(DEFAULT, 'Bullet Proof Laptop','For all those hackers stuck in sketchy neighborhoods and failed states, are you tired of your computer getting destroyed in daily hails of gunfire? Do you want to be able to use your hacker hardware as body armor when youre stuck in a pinch? Then weve got the product just for you! 32GB RAM, 1TB SSD, intel i13 96000k CPU, GTX 20050TI 8 GB GPU, all wrapped up in a beautiful and sleek bulletproof case. Weight: 36LB', 1200.99, true);
 
