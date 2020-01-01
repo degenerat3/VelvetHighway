@@ -16,7 +16,7 @@
     $query = "SELECT * FROM orders WHERE id=" . $ordid;
     $rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
     $result = pg_fetch_all($rs);
-    $row = $result[0];
+    foreach ($result as $row){
     $q2 = "SELECT name FROM products WHERE id=" . $row['prodid'];
     $rs2 = pg_query($db_conn, $q2) or die("Error: Order contains invalid product ID...");
     $res2 = pg_fetch_all($rs2)[0];
@@ -36,6 +36,7 @@
     } else{
       echo "<p>Shipment Status: Not yet shipped</p>";
     }
+  }
     
   }
 ?>
