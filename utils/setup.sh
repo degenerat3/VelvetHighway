@@ -4,7 +4,7 @@ echo "[+] Updating packages..."
 sudo apt-get update > /dev/null
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
-  echo "[+] Success"
+  echo "[+] Success!"
 else
   echo "[*]Error! Exiting..."
   exit 1
@@ -14,15 +14,16 @@ echo "[+] Installing packages..."
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install postgresql postgresql-contrib php7.2 libapache2-mod-php php7.2-pgsql apache2 > /dev/null
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
-  echo "[+] Success"
+  echo "[+] Success!"
 else
   echo "[*] Error! Exiting..."
   exit 1
 fi
+echo "[+] Restarting webserver..."
 sudo systemctl restart apache2 > /dev/null
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
-  echo "[+] Success"
+  echo "[+] Success!"
 else
   echo "[*]Error! Exiting..."
   exit 1
@@ -33,7 +34,7 @@ echo "[+] Adding user..."
 sudo useradd shopadmin > /dev/null
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
-  echo "[+] Success"
+  echo "[+] Success!"
 else
   echo "[*]Error! Exiting..."
   exit 1
@@ -42,7 +43,7 @@ echo "[+] Initializng database..."
 sudo -u postgres psql -a -f ini.sql  > /dev/null # create tables
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
-  echo "[+] Success"
+  echo "[+] Success!"
 else
   echo "[*]Error! Exiting..."
   exit 1
@@ -51,7 +52,7 @@ echo "[+] Adding product to database..."
 sudo -u postgres psql -a -f add_products.sql > /dev/null # insert items into products table
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
-  echo "[+] Success"
+  echo "[+] Success!"
 else
   echo "[*]Error! Exiting..."
   exit 1
@@ -65,15 +66,16 @@ echo "[+] Setting up web pages..."
 cp -r ../site/* /var/www/html > /dev/null
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
-  echo "[+] Success"
+  echo "[+] Success!"
 else
   echo "[*]Error! Exiting..."
   exit 1
 fi
+echo "[+] Removing old index...."
 rm /var/www/html/index.html > /dev/null
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
-  echo "[+] Success"
+  echo "[+] Success!"
 else
   echo "[*]Error! Exiting..."
   exit 1
