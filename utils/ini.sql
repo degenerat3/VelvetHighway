@@ -19,7 +19,7 @@ ALTER SEQUENCE orders_id_seq RESTART WITH 2923706363000;
   CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR (30) NOT NULL,
-    description VARCHAR (250) NOT NULL,
+    description VARCHAR (500) NOT NULL,
     price NUMERIC (10,2),
     instock BOOLEAN not null default true
   );
