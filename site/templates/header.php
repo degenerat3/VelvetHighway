@@ -16,7 +16,7 @@
 </style>
   </head>
 
-  <body style="background-color:#b2b2b2;">
+  <header style="style="background-color:gray;background-image:none">
   <a href="index.php">
   <img src="images/vh-logo-full.png" alt="Velvet Highway Homepage" style="width:436px;height:100px;border:0;">
 </a>
@@ -33,5 +33,5 @@
 <a href="purchase.php">
   <img src="images/new-purchase.png" style="width:100px;height:25px;border:0;">
 </a>
-  </body>
+  </header>
 </html>
