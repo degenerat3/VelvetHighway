@@ -7,7 +7,7 @@
 <h5> Enter your oder number: </h5>
 <form method="post">
   <input type="text" id="orderid" name="orderid">
-  <input type="submit" name="search" value="Search Orders">
+  <input type="submit" name="search" id="search" value="Search Orders">
 </form>
 <?php
   if (isset($_POST['search'])) {
