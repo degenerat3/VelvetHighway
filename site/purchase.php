@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
         <label for="cvv">CVV/CVC</label>
     	<input type="text" name="cvv" id="cvv">
         <br><br><br>
-    	<input type="submit" name="submit" value="Submit">
+    	<input type="submit" name="submit" id="submit" value="Submit">
     </form>
 
 </center>
