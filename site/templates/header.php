@@ -8,6 +8,12 @@
     <title>The Velvet Highway</title>
 
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        background-image: url("images/background.png");
+        color:#00e7ff;
+      }
+</style>
   </head>
 
   <body style="background-color:#b2b2b2;">
