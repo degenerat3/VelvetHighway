@@ -16,7 +16,7 @@
 </style>
   </head>
 
-  <header style="style="background-color:gray;background-image:none">
+  <header style="background-color:gray;background-image:none">
   <a href="index.php">
   <img src="images/vh-logo-full.png" alt="Velvet Highway Homepage" style="width:436px;height:100px;border:0;">
 </a>
