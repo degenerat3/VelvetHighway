@@ -11,7 +11,9 @@ if (isset($_POST['submit'])) {
       $new_id = $row['0'];
       echo "<h3>Order Successfully placed! </h3>";
       echo "<h4>Thank you for shopping with Velvet Highway!</h4>";
-      echo "<h4>Your order number is: " . $new_id . ", please retain this information for your records. </h4>";
+      echo "<h4>Your order number is: </h4>";
+      echo '<h4 id="newordernumber">' . $new_id . '</h4>'
+      echo '<h4> Please retain this information for your records. </h4>'
 }
 ?>
 
