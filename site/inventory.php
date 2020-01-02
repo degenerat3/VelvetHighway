@@ -55,7 +55,7 @@
   }
     $namelink = "?name='" . $row["name"] . "'";
     str_replace(" ", "+", $namelink);
-    echo '<td> <a href="product.php' . $namelink . '">More Info</a> </td>';
+    echo '<td> <a href="product.php' . $namelink . '"> <img src="images/more-info.png"style="width:60px;height:30px;border:0;"> </a> </td>';
     echo "</tr>";
   }
   echo "</tbody> </table>";
