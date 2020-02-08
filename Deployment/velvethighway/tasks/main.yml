@@ -1,0 +1,18 @@
+---
+    # tasks file for VelvetHighway
+
+# Move site files and init script
+- name: Move tar and initscript over
+  copy: 
+    src: "{{ item }}"
+    dest: /tmp/
+    owner: root
+    group: root
+  with_items:
+    - site.tar.gz
+    - init.sh
+
+- name: Run init script
+  shell: bash init.sh
+
+    
