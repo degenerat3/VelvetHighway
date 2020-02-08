@@ -63,7 +63,7 @@ fi
 
 ## Copy app files to web dir
 echo "[+] Setting up web pages..."
-cp -r ../site/* /var/www/html > /dev/null
+cp -r ../* /var/www/html > /dev/null
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
   echo "[+] Success!"
