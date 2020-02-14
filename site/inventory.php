@@ -62,7 +62,7 @@
     echo "<td> <img src=" . $impath . " alt=\"" . $row["name"] . "\" border=3 height=100 width=100></img></td>";
     echo "<td>" . $row["name"] . "</td>";
     echo "<td>" . $row["price"] . "</td>";
-    if ($row["instock"] == "t"){
+    if ($row["instock"] == "1"){
     echo "<td> In Stock </td>";
   }else { echo "<td> Out of Stock </td>";
   }
