@@ -11,7 +11,13 @@
   <?php
   if (isset($_POST['search'])) {
     #$db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
-    $db_conn = mysqli_connect("localhost", "shopadmin", "velvet_admin", "shop") or die("Cannot connect to DB.");
+    $db_conn = mysqli_connect("localhost", "shopadmin", "velvet_admin", "shop");
+    if (!$db_conn) {
+      echo "Error: Unable to connect to MySQL." . PHP_EOL;
+      echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+      echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+      exit;
+    }
     $query = "SELECT * FROM products WHERE lower(name) LIKE lower('%" . $_POST['nmsrch'] . "%')";
     #$rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
     $rs = mysqli_query($db_conn, $query) or die("Cannot execute query: $query\n");
@@ -28,7 +34,7 @@
     echo "<td> <img src=" . $impath . " alt=\"" . $row["name"] . "\" border=3 height=100 width=100></img></td>";
     echo "<td>" . $row["name"] . "</td>";
     echo "<td>" . $row["price"] . "</td>";
-    if ($row["instock"] == "t"){
+    if ($row["instock"] == "1"){
     echo "<td> In Stock </td>";
   }else { echo "<td> Out of Stock </td>";
   }

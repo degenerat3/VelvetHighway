@@ -2,8 +2,13 @@
 <center>
 <?php
 if (isset($_POST['submit'])) {
-      #$db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
-      $db_conn = mysqli_connect("localhost", "shopadmin", "velvet_admin", "shop") or die("Cannot connect to DB.");
+      $db_conn = mysqli_connect("localhost", "shopadmin", "velvet_admin", "shop");
+      if (!$db_conn) {
+        echo "Error: Unable to connect to MySQL." . PHP_EOL;
+        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+        exit;
+      }
       $valstr = "('" . $_POST['firstname'] . "', '" . $_POST['lastname'] . "', '" . $_POST['email'] . "', '" . $_POST['prodid'] . "', '" . $_POST['ccnum'] . "', 
       '" . $_POST['cvv'] . "')";
       $query = "INSERT INTO orders (firstname, lastname, email, prodid, ccnum, cvv) VALUES " . $valstr . " RETURNING id;";
