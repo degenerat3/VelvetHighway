@@ -12,7 +12,7 @@ $query = 'SELECT * FROM products WHERE name = '.$name.' LIMIT 1';
 #$result = pg_query($db_conn, $query);
 #$row = pg_fetch_all($result)[0];
 $result = mysqli_query($db_conn, $query);
-$row = mysqli_fetch_all($result)[0];
+$row = mysqli_fetch_all($result, MYSQLI_ASSOC)[0];
 $impath = "\"images/products/" . $row["name"] .".jpg\"";
 echo "<h3> " . $row["name"] . "</h3>";
 echo "<img src=" . $impath . " alt=\"" . $row["name"] . "\" border=3 </img>";

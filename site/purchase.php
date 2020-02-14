@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
       #$res = pg_query($db_conn, $query);
       #$row = pg_fetch_row($res);
       $res = mysqli_query($db_conn, $query);
-      $row = mysqli_fetch_row($res);
+      $row = mysqli_fetch_row($res, MYSQLI_ASSOC);
       $new_id = $row['0'];
       echo "<h3>Order Successfully placed! </h3>";
       echo "<h4>Thank you for shopping with Velvet Highway!</h4>";
