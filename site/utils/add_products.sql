@@ -1,4 +1,4 @@
-\c shop;
+use shop;
 INSERT INTO products VALUES(DEFAULT, 'Stolen Government Documents','500 random pages of classified material from various intel hacks that we have performed. You will recieve a variety of documents from agencies such as GRU, MI5, BND, NSA, and more! Fun excerpts include information on black ops missions, state-sponsored malware campaigns, governement takeovers/coups, illuminati meetings, classified math formulas, and many many more!', 99.99, true);
 INSERT INTO products VALUES(DEFAULT, 'Skimmed Credit Cards','10 Credit Card numbers with associated CVV/CVCs and billing addresses', 4.99, true);
 INSERT INTO products VALUES(DEFAULT, 'Windows Me 0-day','Unpatched RCE in Windows Me, use it to pwn all sorts of hospitals, gov agencies, and private businesses that are still running this superior operating system.', 0.99, false);

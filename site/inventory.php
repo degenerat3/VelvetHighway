@@ -10,10 +10,19 @@
 
   <?php
   if (isset($_POST['search'])) {
-    $db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+    #$db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+    $db_conn = mysqli_connect("localhost", "shopadmin", "velvet_admin", "shop");
+    if (!$db_conn) {
+      echo "Error: Unable to connect to MySQL." . PHP_EOL;
+      echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+      echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+      exit;
+    }
     $query = "SELECT * FROM products WHERE lower(name) LIKE lower('%" . $_POST['nmsrch'] . "%')";
-    $rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
-  $result = pg_fetch_all($rs);
+    #$rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
+    $rs = mysqli_query($db_conn, $query) or die("Cannot execute query: $query\n");
+  #$result = pg_fetch_all($rs);
+  $result = mysqli_fetch_all($rs, MYSQLI_ASSOC);
   echo "<p> Showing search results for '" . $_POST['nmsrch'] . "'...</p>";
   echo "<br>";
   echo '<a href="inventory.php">Clear Search</a>';
@@ -25,7 +34,7 @@
     echo "<td> <img src=" . $impath . " alt=\"" . $row["name"] . "\" border=3 height=100 width=100></img></td>";
     echo "<td>" . $row["name"] . "</td>";
     echo "<td>" . $row["price"] . "</td>";
-    if ($row["instock"] == "t"){
+    if ($row["instock"] == "1"){
     echo "<td> In Stock </td>";
   }else { echo "<td> Out of Stock </td>";
   }
@@ -36,10 +45,14 @@
   }
   echo "</tbody> </table>";
   } else {
-  $db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+  #$db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+  $db_conn = mysqli_connect("localhost", "shopadmin", "velvet_admin", "shop") or die("Cannot connect to DB.");
   $query = "SELECT * FROM products";
-  $rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
-  $result = pg_fetch_all($rs);
+  #$rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
+  $rs = mysqli_query($db_conn, $query) or die("Cannot execute query: $query\n");
+  #$result = pg_fetch_all($rs);
+  $result = mysqli_fetch_all($rs, MYSQLI_ASSOC);
+
 
   echo "<table>\n<thead>\n<tr>\n<th>ID</th>\n<th>Thumbnail</th>\n<th>Name</th>\n<th>Price(USD)</th>\n<th>Status</th>\n<th>Link</th>\n</tr>\n</thead>\n<tbody>\n";
   foreach ($result as $row){
@@ -49,7 +62,7 @@
     echo "<td> <img src=" . $impath . " alt=\"" . $row["name"] . "\" border=3 height=100 width=100></img></td>";
     echo "<td>" . $row["name"] . "</td>";
     echo "<td>" . $row["price"] . "</td>";
-    if ($row["instock"] == "t"){
+    if ($row["instock"] == "1"){
     echo "<td> In Stock </td>";
   }else { echo "<td> Out of Stock </td>";
   }

@@ -11,15 +11,20 @@
 </form>
 <?php
   if (isset($_POST['search'])) {
-    $db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+    #$db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+    $db_conn = mysqli_connect("localhost", "shopadmin", "velvet_admin", "shop") or die("Cannot connect to DB.");
     $ordid = $_POST['orderid'];
     $query = "SELECT * FROM orders WHERE id=" . $ordid;
-    $rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
-    $result = pg_fetch_all($rs);
+    #$rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
+    $rs = mysqli_query($db_conn, $query) or die("Cannot execute query: $query\n");
+    #$result = pg_fetch_all($rs);
+    $result = mysqli_fetch_all($rs, MYSQLI_ASSOC);
     foreach ($result as $row){
     $q2 = "SELECT name FROM products WHERE id=" . $row['prodid'];
-    $rs2 = pg_query($db_conn, $q2) or die("Error: Order contains invalid product ID...");
-    $res2 = pg_fetch_all($rs2)[0];
+    #$rs2 = pg_query($db_conn, $q2) or die("Error: Order contains invalid product ID...");
+    $rs2 = mysqli_query($db_conn, $q2) or die("Error: Order contains invalid product ID...");
+    #$res2 = pg_fetch_all($rs2)[0];
+    $res2 = mysqli_fetch_all($rs2, MYSQLI_ASSOC)[0];
     $prodname = $res2['name'];
     echo "<br>";
     echo "<br>";

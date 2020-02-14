@@ -2,13 +2,23 @@
 <center>
 <?php
 if (isset($_POST['submit'])) {
-      $db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+      $db_conn = mysqli_connect("localhost", "shopadmin", "velvet_admin", "shop");
+      if (!$db_conn) {
+        echo "Error: Unable to connect to MySQL." . PHP_EOL;
+        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+        exit;
+      }
       $valstr = "('" . $_POST['firstname'] . "', '" . $_POST['lastname'] . "', '" . $_POST['email'] . "', '" . $_POST['prodid'] . "', '" . $_POST['ccnum'] . "', 
       '" . $_POST['cvv'] . "')";
-      $query = "INSERT INTO orders (firstname, lastname, email, prodid, ccnum, cvv) VALUES " . $valstr . " RETURNING id;";
-      $res = pg_query($db_conn, $query);
-      $row = pg_fetch_row($res);
-      $new_id = $row['0'];
+      
+      $query = "INSERT INTO orders (firstname, lastname, email, prodid, ccnum, cvv) VALUES " . $valstr . ";";
+      $res = mysqli_query($db_conn, $query);
+      $query = "SELECT LAST_INSERT_ID();";
+      $res = mysqli_query($db_conn, $query);
+      $row = mysqli_fetch_all($res, MYSQLI_ASSOC);
+      $a = $row[0];
+      $new_id = $a['LAST_INSERT_ID()'];
       echo "<h3>Order Successfully placed! </h3>";
       echo "<h4>Thank you for shopping with Velvet Highway!</h4>";
       echo "<h4>Your order number is: </h4>";
