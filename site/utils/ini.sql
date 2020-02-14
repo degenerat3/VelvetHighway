@@ -1,4 +1,4 @@
-CREATE USER shopadmin IDENTIFIED BY 'velvet_admin';
+CREATE USER shopadmin IDENTIFIED with mysql_native_password BY 'velvet_admin';
 CREATE DATABASE shop;
 
 USE shop;
