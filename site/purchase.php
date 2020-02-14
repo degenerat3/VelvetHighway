@@ -11,12 +11,14 @@ if (isset($_POST['submit'])) {
       }
       $valstr = "('" . $_POST['firstname'] . "', '" . $_POST['lastname'] . "', '" . $_POST['email'] . "', '" . $_POST['prodid'] . "', '" . $_POST['ccnum'] . "', 
       '" . $_POST['cvv'] . "')";
-      $query = "INSERT INTO orders (firstname, lastname, email, prodid, ccnum, cvv) VALUES " . $valstr . " RETURNING id;";
-      #$res = pg_query($db_conn, $query);
-      #$row = pg_fetch_row($res);
+      
+      $query = "INSERT INTO orders (firstname, lastname, email, prodid, ccnum, cvv) VALUES " . $valstr . ";";
       $res = mysqli_query($db_conn, $query);
-      $row = mysqli_fetch_row($res, MYSQLI_ASSOC);
-      $new_id = $row['0'];
+      $query = "SELECT LAST_INSERT_ID();";
+      $res = mysqli_query($db_conn, $query);
+      $row = mysqli_fetch_all($res, MYSQLI_ASSOC);
+      $a = $row[0];
+      $new_id = $a['LAST_INSERT_ID()'];
       echo "<h3>Order Successfully placed! </h3>";
       echo "<h4>Thank you for shopping with Velvet Highway!</h4>";
       echo "<h4>Your order number is: </h4>";
