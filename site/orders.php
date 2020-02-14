@@ -18,7 +18,7 @@
     #$rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
     $rs = mysqli_query($db_conn, $query) or die("Cannot execute query: $query\n");
     #$result = pg_fetch_all($rs);
-    $result = mysqli_fetch_all($rs)
+    $result = mysqli_fetch_all($rs);
     foreach ($result as $row){
     $q2 = "SELECT name FROM products WHERE id=" . $row['prodid'];
     #$rs2 = pg_query($db_conn, $q2) or die("Error: Order contains invalid product ID...");

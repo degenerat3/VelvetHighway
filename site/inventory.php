@@ -16,7 +16,7 @@
     #$rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
     $rs = mysqli_query($db_conn, $query) or die("Cannot execute query: $query\n");
   #$result = pg_fetch_all($rs);
-  $result = mysqli_fetch_all($rs)
+  $result = mysqli_fetch_all($rs);
   echo "<p> Showing search results for '" . $_POST['nmsrch'] . "'...</p>";
   echo "<br>";
   echo '<a href="inventory.php">Clear Search</a>';
@@ -45,7 +45,7 @@
   #$rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
   $rs = mysqli_query($db_conn, $query) or die("Cannot execute query: $query\n");
   #$result = pg_fetch_all($rs);
-  $result = mysqli_fetch_all($rs)
+  $result = mysqli_fetch_all($rs);
 
 
   echo "<table>\n<thead>\n<tr>\n<th>ID</th>\n<th>Thumbnail</th>\n<th>Name</th>\n<th>Price(USD)</th>\n<th>Status</th>\n<th>Link</th>\n</tr>\n</thead>\n<tbody>\n";
