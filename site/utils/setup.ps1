@@ -28,8 +28,8 @@ Add-Content "C:\tools\php74\php.ini" "`nextension=php_pdo_mysql.dll"
 Add-Content "C:\tools\php74\php.ini" "`nextension=php_openssl.dll"
 Add-Content "C:\tools\php74\php.ini" "`n"
 
-cmd.exe /c 'mysql --user="root" --password="" < "ini.sql"'
-cmd.exe /c 'mysql --user="root" --password="" < "add_products.sql"'
+cmd.exe /c 'C:\tools\mysql\current\bin\mysql.exe --user="root" --password="" < "ini.sql"'
+cmd.exe /c 'C:\tools\mysql\current\bin\mysql.exe --user="root" --password="" < "add_products.sql"'
 
 Get-ChildItem -Path "..\" | Copy-Item -Destination "C:\HTTPD\Apache24\htdocs" -Recurse
 
