@@ -10,10 +10,13 @@
 
   <?php
   if (isset($_POST['search'])) {
-    $db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+    #$db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+    $db_conn = mysqli_connect("localhost", "shopadmin", "velvet_admin", "shop") or die("Cannot connect to DB.");
     $query = "SELECT * FROM products WHERE lower(name) LIKE lower('%" . $_POST['nmsrch'] . "%')";
-    $rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
-  $result = pg_fetch_all($rs);
+    #$rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
+    $rs = mysqli_query($db_conn, $query) or die("Cannot execute query: $query\n");
+  #$result = pg_fetch_all($rs);
+  $result = mysqli_fetch_all($rs)
   echo "<p> Showing search results for '" . $_POST['nmsrch'] . "'...</p>";
   echo "<br>";
   echo '<a href="inventory.php">Clear Search</a>';
@@ -36,10 +39,14 @@
   }
   echo "</tbody> </table>";
   } else {
-  $db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+  #$db_conn = pg_connect("host=localhost dbname=shop user=shopadmin password=velvet_admin") or die("Cannot connect to DB.");
+  $db_conn = mysqli_connect("localhost", "shopadmin", "velvet_admin", "shop") or die("Cannot connect to DB.");
   $query = "SELECT * FROM products";
-  $rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
-  $result = pg_fetch_all($rs);
+  #$rs = pg_query($db_conn, $query) or die("Cannot execute query: $query\n");
+  $rs = mysqli_query($db_conn, $query) or die("Cannot execute query: $query\n");
+  #$result = pg_fetch_all($rs);
+  $result = mysqli_fetch_all($rs)
+
 
   echo "<table>\n<thead>\n<tr>\n<th>ID</th>\n<th>Thumbnail</th>\n<th>Name</th>\n<th>Price(USD)</th>\n<th>Status</th>\n<th>Link</th>\n</tr>\n</thead>\n<tbody>\n";
   foreach ($result as $row){
