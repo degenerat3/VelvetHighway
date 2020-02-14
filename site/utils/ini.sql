@@ -1,10 +1,10 @@
-CREATE USER shopadmin WITH PASSWORD 'velvet_admin';
+CREATE USER shopadmin IDENTIFIED BY 'velvet_admin';
 CREATE DATABASE shop;
 
-\c shop;
+USE shop;
 
   CREATE TABLE orders (
-    id BIGSERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     firstname VARCHAR (30) NOT NULL,
     lastname VARCHAR (30) NOT NULL,
     email VARCHAR (50) NOT NULL,
@@ -14,7 +14,7 @@ CREATE DATABASE shop;
     shipped BOOLEAN not null default false
   );
 
-ALTER SEQUENCE orders_id_seq RESTART WITH 2923706363000;
+ALTER TABLE orders AUTO_INCREMENT=2923706363000;
 
   CREATE TABLE products (
     id SERIAL PRIMARY KEY,
@@ -24,9 +24,4 @@ ALTER SEQUENCE orders_id_seq RESTART WITH 2923706363000;
     instock BOOLEAN not null default true
   );
 
-GRANT ALL PRIVILEGES ON DATABASE shop TO shopadmin;
-GRANT USAGE ON SCHEMA public TO shopadmin;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO shopadmin;
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO shopadmin;
-ALTER TABLE orders OWNER TO shopadmin;
-ALTER TABLE products OWNER TO shopadmin;
+GRANT ALL PRIVILEGES ON shop.* TO shopadmin;
