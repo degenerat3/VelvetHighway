@@ -3,7 +3,7 @@ Vulnerable "storefront" application for ISTS 2020
 
 ### Install
 - clone the repository
-- `cd VelvetHighway/utils`
+- `cd VelvetHighway/site/utils`
 - `.\setup.ps1`  
 
 
